@@ -1,0 +1,64 @@
+---
+title: "Live Session Unit 2 Assignment"
+author: "Camille Howard"
+date: "September 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo = TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#### **What is a basic workflow for reproducible research?**
+
+1. Data Gathering
+2. Data Analysis
+3. Results Presentation
+
+#### **What are five practical tips for making research reproducible?**
+
+1. Document everything
+2. Everything is a text file.
+3. All files should be human readable
+4. Explicitly tie your files together.
+5. Have a plan to organize, store and make your files available.
+
+#### **Give an example of how you might implement each tip**
+
+1. Recording session info and note what system is used.  This allows people to know what packages are loaded just by looking at the code.
+2. Files should be stored in the simplest file format, text file.
+3. Comment on your code with a goal of communicating its design and purpose.
+4. Use tie commands to explicitly link files together.  These commands instruct the program you are using to use information from another file.
+5. Organizing the research in files to limit the amount of content any one file has to make files modular.
+
+#### **Which of these do you think will be the most difficult**
+
+I'm concerned about creating a plan to organize, store and make files available.  It seem like there are a lot of different files and the propensity for the information to get lost is highly probably if there isn't a good organization plan in place.
+
+#### We will be using the built-in dataset airquality which has daily air quality.
+
+*2A.  Temperature By Month scatterplot shows monthly temperature.
+*2B.  Temperature Vs Ozone scatterplot shows Ozone activity in relation to temperature.
+
+```{r airquality, echo=TRUE} 
+str(airquality)
+Temp <- airquality$Temp
+Month <- airquality$Month
+plot(x=Month, y=Temp, main="Temperature By Month")
+
+Ozone <- airquality$Ozone
+plot(x=Temp, y=Ozone, main="Temperature vs Ozone")
+```
+*3A. Scatterplot temperature vs pressure.
+
+```{r pressure_plot, echo=TRUE}
+Pressure <-pressure$pressure
+Temperature <-pressure$temperature
+plot(x=Pressure, y=Temperature, main="Temperature vs Pressure")
+```
+```{r pressure_plot2, echo=TRUE}
+Temperature <-pressure$temperature
+Pressure <-pressure$pressure
+plot(x=Temperature, y=Pressure, main="Pressure vs Temperature")
+```
